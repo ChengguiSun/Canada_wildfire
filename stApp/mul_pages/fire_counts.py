@@ -7,7 +7,7 @@ def fire_counts(fireNumber):
 
     # Load and plot data
     num = fireNumber.copy()  # using the filtered dataframe
-    num['Date'] = pd.to_datetime(num['Year'].astype(str) + '-' + num['Month'].astype(str), format="%Y-%B")  # convert Date to datetime object
+    num['Time'] = pd.to_datetime(num['Year'].astype(str) + '-' + num['Month'].astype(str), format="%Y-%B")  # convert Time to datetime object
     
     N = 5  # Default number of rows to display
 
@@ -26,12 +26,12 @@ def fire_counts(fireNumber):
         # Create a new dataframe for each jurisdiction
         jurisdiction_df = num[num['Jurisdiction'] == jurisdiction]
         # Add a line to the figure for the current jurisdiction
-        fig_num.add_trace(go.Scatter(x= jurisdiction_df['Date'], y= jurisdiction_df['Number'], 
+        fig_num.add_trace(go.Scatter(x= jurisdiction_df['Time'], y= jurisdiction_df['Number'], 
                                 mode='lines', name = jurisdiction))
 
     # Set the title and labels
     fig_num.update_layout(title='', 
-                    xaxis_title='Date', yaxis_title='Number',
+                    xaxis_title='Time', yaxis_title='Number',
                     xaxis_showgrid=False, yaxis_showgrid=False,
                     legend=dict(x=-1, y=0.5, orientation="h"))
         

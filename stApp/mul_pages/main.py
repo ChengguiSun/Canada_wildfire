@@ -5,6 +5,8 @@ from fire_counts import fire_counts
 from burned_area import burned_area
 from property_losses import property_losses
 
+st.set_page_config(page_title='Fires', layout = 'wide', initial_sidebar_state = 'auto')
+
 def load_data():
     # LOADING DATA
     @st.cache_data
@@ -12,8 +14,11 @@ def load_data():
         return pd.read_pickle(fname)
 
     fireNumber = load_data('./data/NFD_Number_of_fires_by_month.pkl')
+    print(fireNumber.columns)
     fireArea = load_data('./data/NFD_Area_burned_by_month.pkl')
-    fireLoss = load_data('./data/NFD _Property_losses.pkl')
+    print(fireArea.columns)
+    fireLoss = load_data('./data/NFD_Property_losses.pkl')
+    print(fireLoss.columns)
     return fireNumber, fireArea, fireLoss
 
 def main():

@@ -51,8 +51,12 @@ def home():
     """, unsafe_allow_html=True)
    
     col1, col2, col3 = st.columns(3)
-    with col2:
+    with col1:
         st.image("./img/wildfire_stable_diffusion.jpg", width=None, use_column_width="auto", output_format="auto")
+    with col2:
+        st.image("./img/wildfire_stable_diffusion2.jpg", width=None, use_column_width="auto", output_format="auto")
+    with col3:
+        st.image("./img/wildfire_stable_diffusion3.jpg", width=None, use_column_width="auto", output_format="auto")
     
     st.header("Attribution")
     st.markdown("""

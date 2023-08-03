@@ -7,7 +7,7 @@ def burned_area(fireArea):
 
     # Load and plot data
     area = fireArea.copy()  # using the filtered dataframe
-    area['Date'] = pd.to_datetime(area['Year'].astype(str) + '-' + area['Month'].astype(str), format="%Y-%B")  # convert Date to datetime object
+    area['Time'] = pd.to_datetime(area['Year'].astype(str) + '-' + area['Month'].astype(str), format="%Y-%B")  # convert Time to datetime object
     
     N = 5  # Default number of rows to display
 
@@ -26,12 +26,12 @@ def burned_area(fireArea):
         # Create a new dataframe for each jurisdiction
         jurisdiction_df_area = area[area['Jurisdiction'] == jurisdiction]
         # Add a line to the figure for the current jurisdiction
-        fig_area.add_trace(go.Scatter(x= jurisdiction_df_area['Date'], y= jurisdiction_df_area['Area (hectares)'], 
+        fig_area.add_trace(go.Scatter(x= jurisdiction_df_area['Time'], y= jurisdiction_df_area['Area (hectares)'], 
                                 mode='lines', name= jurisdiction))
 
     # Set the title and labels
     fig_area.update_layout(title='', 
-                    xaxis_title='Date', yaxis_title='Area (hectares)',
+                    xaxis_title='Time', yaxis_title='Area (hectares)',
                     xaxis_showgrid=False, yaxis_showgrid=False,
                     legend=dict(x=-1, y=0.5, orientation="h"))
     

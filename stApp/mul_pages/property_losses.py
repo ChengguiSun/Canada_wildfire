@@ -14,14 +14,17 @@ def property_losses(fireLoss):
     
     
     # Get unique jurisdictions
-    unique_jurisdictions_loss = sorted(Loss['Jurisdiction'].unique())
+    unique_jurisdictions_loss = list(Loss['Jurisdiction'].unique())
 
     # Move 'Canada' to the end of the list
     unique_jurisdictions_loss.remove('Canada')
+    province_list = unique_jurisdictions_loss.copy()
     unique_jurisdictions_loss.append('Canada')
+    province_list = sorted(province_list, reverse=True)
+    unique_jurisdictions_loss.sort()
 
     # Loop over each unique jurisdiction in filtered data
-    for jurisdiction in unique_jurisdictions_loss:
+    for jurisdiction in province_list:
         # Create a new dataframe for each jurisdiction
         jurisdiction_df_loss = Loss[Loss['Jurisdiction'] == jurisdiction]
         # Add a bar to the figure for the current jurisdiction
@@ -29,6 +32,7 @@ def property_losses(fireLoss):
 
     # Set the title and labels
     fig_loss.update_layout(title='',
+                           barmode='stack',
                            xaxis_title='Year', yaxis_title='Dollars',
                            xaxis_showgrid=False, yaxis_showgrid=False,
                            legend=dict(x=-1, y=0.5, orientation="h"))
