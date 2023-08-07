@@ -4,6 +4,10 @@ import plotly.graph_objects as go
 
 def fire_counts(fireNumber):
     st.title('Number of Forest Fires by Month from 1990 to 2020')
+    
+    st.markdown('''
+    ### To interact with the Plot below: **Hover** over the plot to view data values, and use the **legend** on the left to toggle visibility of different jurisdictions.
+    ''')
 
     # Load and plot data
     num = fireNumber.copy()  # using the filtered dataframe
@@ -40,6 +44,11 @@ def fire_counts(fireNumber):
 
     # Show the plot
     st.plotly_chart(fig_num, use_container_width=True)  # plot the figure
+    
+    
+    st.markdown('''
+    ### To interact with the Table below: use the **filters** below the plot to select specific years, months, or jurisdictions.
+    ''')
     
     col1_1, col1_2 = st.columns(2)
 

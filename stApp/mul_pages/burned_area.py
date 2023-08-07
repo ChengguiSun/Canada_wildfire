@@ -5,6 +5,9 @@ import plotly.graph_objects as go
 def burned_area(fireArea):
     st.title('Area Burned by Forest Fires by Month from 1990 to 2020')
 
+    st.markdown('''
+    ### To interact with the Plot below: **Hover** over the plot to view data values, and use the **legend** on the left to toggle visibility of different jurisdictions.
+    ''')
     # Load and plot data
     area = fireArea.copy()  # using the filtered dataframe
     area['Time'] = pd.to_datetime(area['Year'].astype(str) + '-' + area['Month'].astype(str), format="%Y-%B")  # convert Time to datetime object
@@ -41,7 +44,9 @@ def burned_area(fireArea):
     # Show the plot
     st.plotly_chart(fig_area, use_container_width=True)  # plot the figure
     
-    
+    st.markdown('''
+    ### To interact with the Table below: use the **filters** below the plot to select specific years, months, or jurisdictions.
+    ''')
     col2_1, col2_2 = st.columns(2)
     
     with col2_1:

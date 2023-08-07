@@ -5,6 +5,9 @@ import plotly.graph_objects as go
 def property_losses(fireLoss):
     st.title('Property Losses Caused by Forest Fires by year from 1990 to 2020')
 
+    st.markdown('''
+    ### To interact with the Plot below: **Hover** over the plot to view data values, and use the **legend** on the left to toggle visibility of different jurisdictions.
+    ''')
     Loss = fireLoss.copy()
     N = 5  # Default number of rows to display 
     # Create a new figure
@@ -40,6 +43,9 @@ def property_losses(fireLoss):
     # Show the plot
     st.plotly_chart(fig_loss, use_container_width=True)
     
+    st.markdown('''
+    ### To interact with the Table below: use the **filters** below the plot to select specific years or jurisdictions.
+    ''')
     col3_1, col3_2 = st.columns(2)
     
     with col3_1:
