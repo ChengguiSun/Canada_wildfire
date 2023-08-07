@@ -2,7 +2,6 @@ import streamlit as st
 
 
 def home():
-    st.image("./img/canada.png", width=50)
     st.title("Canada Forest Fires Statistics")
 
     st.header("Project Objectives")
