@@ -6,7 +6,7 @@ def fire_counts(fireNumber):
     st.title('Number of Forest Fires by Month from 1990 to 2020')
     
     st.markdown('''
-    ### To interact with the Plot below: **Hover** over the plot to view data values, and use the **legend** on the left to toggle visibility of different jurisdictions.
+    ### To interact with the Plot below: **hover** over the plot to view data values, and use the **legend** on the left to toggle visibility of different jurisdictions.
     ''')
 
     # Load and plot data
@@ -47,7 +47,8 @@ def fire_counts(fireNumber):
     
     
     st.markdown('''
-    ### To interact with the Table below: use the **filters** below the plot to select specific years, months, or jurisdictions.
+    ### To interact with the Table below: use the **filters** below the plot to select specific years, months, or jurisdictions.\
+        By default, the table displays 5 rows. However, once filters are applied, all entries meeting the criteria will be displayed.
     ''')
     
     col1_1, col1_2 = st.columns(2)

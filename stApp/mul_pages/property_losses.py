@@ -6,7 +6,7 @@ def property_losses(fireLoss):
     st.title('Property Losses Caused by Forest Fires by year from 1990 to 2020')
 
     st.markdown('''
-    ### To interact with the Plot below: **Hover** over the plot to view data values, and use the **legend** on the left to toggle visibility of different jurisdictions.
+    ### To interact with the Plot below: **hover** over the plot to view data values, and use the **legend** on the left to toggle visibility of different jurisdictions.
     ''')
     Loss = fireLoss.copy()
     N = 5  # Default number of rows to display 
@@ -44,7 +44,8 @@ def property_losses(fireLoss):
     st.plotly_chart(fig_loss, use_container_width=True)
     
     st.markdown('''
-    ### To interact with the Table below: use the **filters** below the plot to select specific years or jurisdictions.
+    ### To interact with the Table below: use the **filters** below the plot to select specific years or jurisdictions.\
+        By default, the table displays 5 rows. However, once filters are applied, all entries meeting the criteria will be displayed.
     ''')
     col3_1, col3_2 = st.columns(2)
     
