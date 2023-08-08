@@ -47,7 +47,7 @@ def fire_counts(fireNumber):
     
     
     st.markdown('''
-    ### To interact with the Table below: use the **filters** below the plot to select specific years, months, or jurisdictions.\
+    ### To explore the table below, utilize the filters to narrow down specific years, months, or jurisdictions.\
         By default, the table displays 5 rows. However, once filters are applied, all entries meeting the criteria will be displayed.
     ''')
     

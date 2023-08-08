@@ -44,9 +44,10 @@ def property_losses(fireLoss):
     st.plotly_chart(fig_loss, use_container_width=True)
     
     st.markdown('''
-    ### To interact with the Table below: use the **filters** below the plot to select specific years or jurisdictions.\
+    ### To explore the table below, utilize the filters to narrow down specific years or jurisdictions.\
         By default, the table displays 5 rows. However, once filters are applied, all entries meeting the criteria will be displayed.
     ''')
+        
     col3_1, col3_2 = st.columns(2)
     
     with col3_1:
