@@ -13,7 +13,7 @@ Python 3.9+
 ## Setup project
 1. clone the project `git clone https://github.com/ChengguiSun/Canada_wildfire.git`
 2. cd project folder `cd Canada_wildfire`
-3. setup python virtual env `python -m venv .venv`
+3. setup python virtual env `python -m venv env`
 4. activate virtual env `env/Scripts/activate`
 5. install required package `pip install -r requirements.txt`
 6. Start web server `streamlit run stApp/mul_pages/app.py`
