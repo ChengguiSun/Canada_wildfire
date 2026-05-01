@@ -5,12 +5,15 @@ import plotly.graph_objects as go
 def fire_counts(fireNumber):
     st.title('Number of Forest Fires by Month from 1990 to 2020')
     
+    fireNumber['Number'] = pd.to_numeric(fireNumber['Number'], errors='coerce').fillna(0).astype(int)
+    
     st.markdown('''
     ### To interact with the Plot below: **hover** over the plot to view data values, and use the **legend** on the left to toggle visibility of different jurisdictions.
     ''')
 
     # Load and plot data
     num = fireNumber.copy()  # using the filtered dataframe
+    num['Number'] = pd.to_numeric(num['Number'], errors='coerce').fillna(0).astype(int)
     num['Time'] = pd.to_datetime(num['Year'].astype(str) + '-' + num['Month'].astype(str), format="%Y-%B")  # convert Time to datetime object
     
     N = 5  # Default number of rows to display
